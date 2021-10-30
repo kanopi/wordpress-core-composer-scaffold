@@ -1,0 +1,34 @@
+{
+  "name": "kanopi/wordpress-core-composer-scaffold",
+  "description": "A flexible Composer project scaffold builder.",
+  "type": "composer-plugin",
+  "keywords": ["wordpress"],
+  "homepage": "https://www.wordpress.org",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "composer-plugin-api": "^1 || ^2",
+    "php": ">=7.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WordPress\\Composer\\Plugin\\Scaffold\\": ""
+    }
+  },
+  "extra": {
+    "class": "WordPress\\Composer\\Plugin\\Scaffold\\Plugin",
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "patches": {
+      "kanopi/wordpress-core": {
+        "Add In Autoloader": "https://gist.githubusercontent.com/sean-e-dietrich/711d5dbfd87d3aa03ca5e7d584ce9f0c/raw/77341b11ad6407da60e4b10ac3f07c95187a73f1/autoloader.patch"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "require-dev": {
+    "composer/composer": "^1.8@stable"
+  }
+}
